@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, { Component } from 'react';
 import './App.css';
 
@@ -8,7 +9,7 @@ const PlayerCard = ({color, symbol}) => {
 	}
 	return (
 		<div style={style} className="player-card">
-			{symbol}
+			{/*{symbol} // * check it if you wanna see what is it  */ }  
 		</div>		
 	)
 }
@@ -25,7 +26,7 @@ class App extends Component {
 			return "It's a draw"
 		}
 		if((playerBlue === "rock" && playerRed === "scissors") ||
-				(playerBlue === "paper" && playerRed === "rock")
+				(playerBlue === "paper" && playerRed === "rock") ||
 				(playerBlue === "scissors" && playerRed === "paper")) {
 					return "Player Blue is a winner !"
 				}
@@ -43,6 +44,7 @@ class App extends Component {
 				playerBlue: this.symbol[Math.floor(Math.random()*3)],
 				winner: ""
 			})
+
 			if(counter > 20) { 
 				clearInterval(myInterval) 
 				this.setState({winner: this.decideWinner()}) // must call function
