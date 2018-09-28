@@ -29,7 +29,7 @@ class App extends Component {
 				(playerBlue === "scissors" && playerRed === "paper")) {
 					return "Player Blue is a winner !"
 				}
-		else return "Player Red is a winner !"
+		return "Player Red is a winner !"
 	}
 
 	runGame = () => {
@@ -43,9 +43,9 @@ class App extends Component {
 				playerBlue: this.symbol[Math.floor(Math.random()*3)],
 				winner: ""
 			})
-			if(counter > 40) { 
+			if(counter > 20) { 
 				clearInterval(myInterval) 
-				this.setState({winner: this.decideWinner})
+				this.setState({winner: this.decideWinner()}) // must call function
 			}
 		}, 100)
 	}
