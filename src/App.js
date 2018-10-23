@@ -9,7 +9,7 @@ const PlayerCard = ({color, symbol}) => {
 	}
 	return (
 		<div style={style} className="player-card">
-			{/*{symbol} // * check it if you wanna see what is it  */ }  
+			{/*{symbol} // ? check it if you wanna see what is it  */ }  
 		</div>		
 	)
 }
@@ -25,9 +25,10 @@ class App extends Component {
 		if(playerBlue === playerRed) {
 			return "It's a draw"
 		}
-		if((playerBlue === "rock" && playerRed === "scissors") ||
+		if( (playerBlue === "rock" && playerRed === "scissors") ||
 				(playerBlue === "paper" && playerRed === "rock") ||
-				(playerBlue === "scissors" && playerRed === "paper")) {
+				(playerBlue === "scissors" && playerRed === "paper")
+			) {
 					return "Player Blue is a winner !"
 				}
 		return "Player Red is a winner !"
@@ -47,7 +48,7 @@ class App extends Component {
 
 			if(counter > 20) { 
 				clearInterval(myInterval) 
-				this.setState({winner: this.decideWinner()}) // must call function
+				this.setState({winner: this.decideWinner}) // must call function
 			}
 		}, 100)
 	}
